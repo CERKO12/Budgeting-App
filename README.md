@@ -1,16 +1,16 @@
 # Budgeting-App
 
-**Author**
- Congkai Sun, Yue Huang
+**Author:**
+Congkai Sun, Yue Huang
 
-**Video**
+**Video:**
 
-**Slides**
+**Slides:**
 
-**Design Document**
+**Design Document:**
 [Project 2 - Design Document](https://github.com/CERKO12/Budgeting-App/files/12855697/Project.2.-.Design.Document.pdf)
 
-**Class Link**
+**Class Link:**
 [CS5610 Web Development](https://johnguerra.co/classes/webDevelopment_fall_2023/)
 
 ## Project Objective
