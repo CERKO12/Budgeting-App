@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+
+      <div class="header">Budget Planning</div>
+
+      <div class="nav">
+          <a href="#transaction" class="transaction">Transaction</a>
+          <a href="#summary" class="summary">Summary</a>
+      </div>
+
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="content" id="transaction">
+            <div class="btm">
+              <div class="create">
+                <h2>Create a Record</h2> 
+                <form id="createRecordForm">
+                  Category:
+                  <input type="text" id="category" />
+                  Amount:
+                  <input type="number" id="amount" />
+                  Date:
+                  <input type="date" id="date" />
+                  Notes:
+                  <input type="text" id="notes" />
+                  <button type="button" class="add" onclick="addTransaction()">Add</button>
+                </form>
+              </div>
+              <div class="query">
+                <div class="query-records">
+                  <h2>Query Records</h2>
+                  Year: <input type="number" id="year" min="2010", max="2023">
+                  </input>
+                  Month: <input type="number" id="month" min="1", max="12">
+                  </input>
+                  <button onclick="displayTransactions()">Search</button>
+                </div>
+                <!-- show your records -->
+                <div class="query-results">
+                  <h2>Records</h2>
+                  <table class="recordsTable">
+                      <thead>
+                          <tr>
+                              <th>Category</th>
+                              <th>Amount</th>
+                              <th>Date</th>
+                              <th>Notes</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Modal for editing records -->
+            <div id="editModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+              <div style="background-color: white; margin: 10% auto; padding: 20px; width: 50%;">
+                  <h2>Edit Record:</h2>
+                  <form id="editRecordForm">
+                      Category: <input type="text" id="editCategory">
+                      Amount: <input type="number" id="editAmount">
+                      Date: <input type="date" id="editDate">
+                      Notes: <input type="text" id="editNotes">
+                      <button type="button" onclick="saveEditedRecord()">Save</button>
+                      <button type="button" onclick="closeEditModal()">Close</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="summary">
+            <div class="btm">
+              <div class="budget">
+                <h2>Set a Budget</h2>
+                <form id="budgetForm">
+                  Year: <input type="number" id="budget-year" min="2010", max="2023" />
+                  Month: <input type="number" id="budget-month" min="1", max="12" />
+                  Amount: <input type="number" id="budget-amount" />
+                  <button type="button" class="add" onclick="setBudget()">Set Budget</button>
+                </form>
+              </div>
+              <div class="budgetHistory">
+                <h2>Budget History</h2>
+                <table class="budgetsTable">
+                  <thead>
+                    <tr>
+                      <th>Year</th>
+                      <th>Month</th>
+                      <th>Budget</th>
+                      <th>Total</th>
+                      <th>Remaining</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div class="budgetChart">
+                <h2>Monthly Transaction</h2>
+                <form id="plotForm">
+                  Year: <input type="number" id="plot-year" min="2010", max="2023" />
+                  <button onclick="displayBarPlot()">View Transactions</button>
+                </form>
+                <canvas id="transactionChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+  </body>
+  <script src="../JS/home.js"></script>
+</html>
