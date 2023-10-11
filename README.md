@@ -11,6 +11,9 @@ Congkai Sun, Yue Huang
 **Design Document:**
 [Project 2 - Design Document](https://github.com/CERKO12/Budgeting-App/files/12855697/Project.2.-.Design.Document.pdf)
 
+**Demo:**
+[Demo Link](https://financial-app-project-2-05e72f78446b.herokuapp.com/HTML/home.html)
+
 **Class Link:**
 [CS5610 Web Development](https://johnguerra.co/classes/webDevelopment_fall_2023/)
 
