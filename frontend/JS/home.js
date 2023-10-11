@@ -10,6 +10,12 @@ function showPage() {
     document.querySelectorAll(".content").forEach(content => {
         content.style.display = "none";
     });
+    if(hash === "summary") {
+        displayBudgets();
+        if(document.getElementById('plot-year').value){
+            displayBarPlot();
+        }
+    };
 
     document.getElementById(hash).style.display = "block";
 }
@@ -32,7 +38,7 @@ async function addTransaction() {
         "Notes": notes
     };
 
-    const response = await fetch('http://localhost:3000/api/addTransaction', {
+    const response = await fetch('https://financial-app-project-2-05e72f78446b.herokuapp.com/api/addTransaction', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json'
@@ -47,7 +53,7 @@ async function addTransaction() {
 async function displayTransactions(){
     const year = document.getElementById('year').value;
     const month = document.getElementById('month').value;
-    const response = await fetch(`http://localhost:3000/api/getTransactions?Year=${year}&Month=${month}`, {
+    const response = await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/getTransactions?Year=${year}&Month=${month}`, {
         method: 'GET'
     });
     const data = await response.json();
@@ -81,7 +87,7 @@ async function displayTransactions(){
 }
 
 async function deleteTransaction(id){
-    await fetch(`http://localhost:3000/api/deleteTransaction?Id=${id}`, {method: 'GET'});
+    await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/deleteTransaction?Id=${id}`, {method: 'GET'});
     displayTransactions();
 }
 
@@ -89,8 +95,8 @@ let transactionId;
 
 async function editTransaction(id){
     document.getElementById("editModal").style.display = "block";
-    response = await fetch(`http://localhost:3000/api/getTransactionById?Id=${id}`)
-    transaction = (await response.json())[0];
+    response = await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/getTransactionById?Id=${id}`)
+    const transaction = (await response.json())[0];
     const category = transaction.Category;
     const amount = transaction.Amount;
     const date = transaction.Date;
@@ -123,7 +129,7 @@ async function saveEditedRecord(){
         "Notes": notes
     }
 
-    await fetch('http://localhost:3000/api/updateTransaction', {
+    await fetch('https://financial-app-project-2-05e72f78446b.herokuapp.com/api/updateTransaction', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -146,7 +152,7 @@ async function setBudget(){
     const month = document.getElementById("budget-month").value;
     const amount = document.getElementById("budget-amount").value;
 
-    const response = await fetch(`http://localhost:3000/api/getTransactions?Year=${year}&Month=${month}`, {
+    const response = await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/getTransactions?Year=${year}&Month=${month}`, {
         method: 'GET'
     });
 
@@ -166,7 +172,7 @@ async function setBudget(){
     }
 
     // route
-    await fetch('http://localhost:3000/api/setBudget', {
+    await fetch('https://financial-app-project-2-05e72f78446b.herokuapp.com/api/setBudget', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -180,7 +186,7 @@ async function setBudget(){
 
 // display all budget 
 async function displayBudgets(){
-    const response = await fetch(`http://localhost:3000/api/getBudgets`, {
+    const response = await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/getBudgets`, {
         method: 'GET'
     });
 
@@ -209,13 +215,13 @@ async function displayBudgets(){
 
 async function deleteBudget(budgetId){  
     console.log("budgetId: ", budgetId);
-    await fetch(`http://localhost:3000/api/deleteBudget?Id=${budgetId}`, {method: 'GET'});
+    await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/deleteBudget?Id=${budgetId}`, {method: 'GET'});
     displayBudgets();
 }
 
 async function displayBarPlot() {
     const year = document.getElementById('plot-year').value;
-
+    
     const months = [
         'January', 'February', 'March', 'April', 'May',
         'June', 'July', 'August', 'September',
@@ -225,22 +231,28 @@ async function displayBarPlot() {
     // Calculate total for each month
     let monthlyTotals = new Array(12).fill(0);
 
-    const response = (await fetch(`http://localhost:3000/api/getBudgetsByYear?year=${year}`, {method: 'GET'}));
+    const response = (await fetch(`https://financial-app-project-2-05e72f78446b.herokuapp.com/api/getBudgetsByYear?year=${year}`, {method: 'GET'}));
     const data = await response.json();
-    
+
     data.forEach(budget => {
         const month = budget.Month;
         const monthIndex = parseInt(month) - 1;
-        monthlyTotals[monthIndex] = budget.Remaining;
+        monthlyTotals[monthIndex] = budget.Total;
     });
 
     const ctx = document.getElementById('transactionChart').getContext('2d');
+    const chart = Chart.getChart(ctx);
+    if(chart) {
+        chart.destroy();
+    }
+    ctx.canvas.width = ctx.canvas.width; 
+
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: months,
             datasets: [{
-                label: `Total Remaining for ${year}`,
+                label: `Total Transaction for ${year}`,
                 data: monthlyTotals,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
