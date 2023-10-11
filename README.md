@@ -6,6 +6,7 @@ Congkai Sun, Yue Huang
 **App:**
 [Online Deployment App Link](https://financial-app-project-2-05e72f78446b.herokuapp.com/HTML/home.html)
 
+Don't forget to upload the video link :)
 **Video:**
 
 **Slides:**
