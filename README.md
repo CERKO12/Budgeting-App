@@ -27,7 +27,7 @@ This is a online budgeting app where each user can record their budget and expen
 1. Clone the repository
 2. 'npm install' to install node modules
 3. Run the command 'npm start'
-4. Go to 'http://localhost:3000/'
+4. Go to 'http://localhost:3000/HTML/home.html'
 
 ## Tech Requirements
 * HTML
