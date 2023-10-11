@@ -10,7 +10,7 @@
     "build": "cd frontend && node run build"
   },
   "keywords": [],
-  "author": "Yue Huang",
+  "author": "Yue Huang, Congkai Sun",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.50.0",
