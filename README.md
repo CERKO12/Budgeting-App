@@ -10,7 +10,7 @@ Congkai Sun, Yue Huang
 [Project 2 - Presentation](https://github.com/CERKO12/Budgeting-App/assets/117726096/4f49e86b-b795-4160-ba4f-42c96bc8d0f6)
 
 **Slides:**
-[Project 2 - Slides](https://github.com/CERKO12/Budgeting-App/files/12862355/CS5610.Project-2.Budgeting.App.pptx)
+[Project 2 - Slides]((https://docs.google.com/presentation/d/11MzbYLemuzZ22UZguIKXDbksNiwLuIlrqEjzxKbjN6Q/edit?usp=sharing))
 
 **Design Document:**
 [Project 2 - Design Document](https://github.com/CERKO12/Budgeting-App/files/12855697/Project.2.-.Design.Document.pdf)
