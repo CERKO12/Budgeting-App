@@ -4,7 +4,7 @@
 Congkai Sun, Yue Huang
 
 **App:**
-[Online Deployment App Link](https://financial-app-project-2-05e72f78446b.herokuapp.com/HTML/home.html)
+[Online Deployment App Link](https://budget-planning.onrender.com/HTML/home.html)
 
 **Video:**
 [Project 2 - Presentation](https://github.com/CERKO12/Budgeting-App/assets/117726096/4f49e86b-b795-4160-ba4f-42c96bc8d0f6)
@@ -14,9 +14,6 @@ Congkai Sun, Yue Huang
 
 **Design Document:**
 [Project 2 - Design Document](https://github.com/CERKO12/Budgeting-App/files/12855697/Project.2.-.Design.Document.pdf)
-
-**Demo:**
-[Demo Link](https://budget-planning.onrender.com/HTML/home.html)
 
 **Class Link:**
 [CS5610 Web Development](https://johnguerra.co/classes/webDevelopment_fall_2023/)
