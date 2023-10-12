@@ -7,6 +7,7 @@ Congkai Sun, Yue Huang
 [Online Deployment App Link](https://financial-app-project-2-05e72f78446b.herokuapp.com/HTML/home.html)
 
 **Video:**
+[Project 2 - Presentation](https://github.com/CERKO12/Budgeting-App/assets/117726096/4f49e86b-b795-4160-ba4f-42c96bc8d0f6)
 
 **Slides:**
 [Project 2 - Slides](https://github.com/CERKO12/Budgeting-App/files/12862355/CS5610.Project-2.Budgeting.App.pptx)
@@ -21,7 +22,7 @@ Congkai Sun, Yue Huang
 [CS5610 Web Development](https://johnguerra.co/classes/webDevelopment_fall_2023/)
 
 ## Project Objective
-This is a online budgeting app where each user can record their budget and expenses. Another important feature is to make it easy to record transactions and visually display spending trends. These give users greater control over their finances or company funds. The project is intended to get experience working with NodeJS + MongoDB + ExpressJS + HTML + JavaScript.
+This is an online budgeting app where each user can record their budget and expenses. Another important feature is to make it easy to record transactions and visually display spending trends. These give users greater control over their finances or company funds. The project is intended to get experience working with NodeJS + MongoDB + ExpressJS + HTML + JavaScript.
 
 ## Instructions to Build
 1. Clone the repository
