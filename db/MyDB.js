@@ -88,7 +88,7 @@ function MyDB() {
     }
   };
 
-
+  /* add and update budget*/
   myDB.setBudget = async (budget) => {
     const { client, db } = connect();
 
