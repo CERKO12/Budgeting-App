@@ -6,6 +6,7 @@ Congkai Sun, Yue Huang
 **App:**
 [Online Deployment App Link](https://budget-planning.onrender.com/HTML/home.html)
 
+Don't forget to upload the video link :)
 **Video:**
 [Project 2 - Presentation](https://github.com/CERKO12/Budgeting-App/assets/117726096/4f49e86b-b795-4160-ba4f-42c96bc8d0f6)
 
