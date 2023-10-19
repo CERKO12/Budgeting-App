@@ -89,6 +89,8 @@ function MyDB() {
   };
 
   /* add and update budget*/
+  // It seems like you have two collections, transactions and budget -
+  // it might make the code organization a bit cleaner if we created modules for each of the collections and their CRUD operations
   myDB.setBudget = async (budget) => {
     const { client, db } = connect();
 
