@@ -40,6 +40,7 @@ router.post("/api/updateTransaction", async (req, res) => {
   res.json("Update: Successfully");
 });
 
+/* try separating all the data endpoints for your Budgeting to another router */
 // set budget
 router.post("/api/setBudget", async (req, res) => {
   const budget = req.body;
