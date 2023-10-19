@@ -1,4 +1,4 @@
-import express from "express";
+import express from "express"; // good using only ES6+ modules
 import apiRouter from "../routes/api.js";
 
 const app = express();
